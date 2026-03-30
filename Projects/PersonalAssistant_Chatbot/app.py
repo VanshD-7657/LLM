@@ -1,6 +1,7 @@
 
 # Step 1: Install dependencies
 import os
+import time
 from langchain_groq import ChatGroq
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -117,54 +118,67 @@ rag_chain = (
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
+
+# Header
 st.markdown("""
 <h1 style='text-align: center;'>
-    🤖 Vansh's AI Assistant
+    🤖 Vansh's Personal AI Assistant
 </h1>
 <p style='text-align: center;'>
     Ask anything about Vansh Dhall
 </p>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-.chat-container {
-    border-radius: 10px;
-    padding: 10px;
-}
-</style>
-""", unsafe_allow_html=True)
+# Clear Chat Button
+if st.button("🧹 Clear Chat"):
+    st.session_state.chat_history = []
+    st.rerun()
+
+# Empty state
+if not st.session_state.chat_history:
+    st.markdown("### 👋 Start a conversation...")
+
+# Streaming function (improved)
+def stream_response(response):
+    words = response.split()
+    chunk_size = 3
+    for i in range(0, len(words), chunk_size):
+        yield " ".join(words[i:i+chunk_size]) + " "
+        time.sleep(0.05)
 
 # Show previous messages (ONLY last 2)
 for message in st.session_state.chat_history[-2:]:
     if isinstance(message, HumanMessage):
-        with st.chat_message("user"):
+        with st.chat_message("user", avatar="🧑"):
             st.write(message.content)
     else:
-        with st.chat_message("assistant"):
+        with st.chat_message("assistant", avatar="🤖"):
             st.write(message.content)
 
-# Input
+# Chat input (clean)
 user_input = st.chat_input("")
 
+# Handle new input
 if user_input:
-    try:
-        response = rag_chain.invoke({
-            "input": user_input,
-            "chat_history": st.session_state.chat_history[-2:]
-        })
-    except Exception as e:
-        response = "Sorry, something went wrong. Please try again."
-
-    # Show new messages immediately
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar="🧑"):
         st.write(user_input)
 
-    with st.chat_message("assistant"):
-        st.write(response)
+    with st.chat_message("assistant", avatar="🤖"):
+        with st.spinner("Thinking..."):
+            time.sleep(0.5)
+            response = rag_chain.invoke({
+                "input": user_input,
+                "chat_history": st.session_state.chat_history[-2:]
+            })
 
-    # Save to history
+        st.write_stream(stream_response(response))
+
+    # Save history
     st.session_state.chat_history.extend([
         HumanMessage(content=user_input),
         AIMessage(content=response)
     ])
+
+# Footer
+st.markdown("---")
+st.caption("🚀 Built by Vansh Dhall • Personal AI Assistant")
