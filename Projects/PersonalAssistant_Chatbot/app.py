@@ -186,10 +186,10 @@ if user_input:
 
         for chunk in stream_response(response):
             streamed_text += chunk
-            message_placeholder.markdown(streamed_text)
+            message_placeholder.write(streamed_text)
 
         # Step 2: Final clean formatted output
-        message_placeholder.markdown(response)
+        message_placeholder.write(response)
 
     # Save history
     st.session_state.chat_history.extend([
