@@ -124,24 +124,32 @@ rag_chain = (
 
 # Streamlit app
 
+# Session
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-
-# Header
+# Style
 st.markdown("""
-<h1 style='text-align: center;'>
-    🤖 Vansh's Personal AI Assistant
-</h1>
-<p style='text-align: center;'>
-    Ask anything about Vansh Dhall
-</p>
+<style>
+img {
+    border-radius: 12px;
+}
+</style>
 """, unsafe_allow_html=True)
 
-# Clear Chat Button
-if st.button("🧹 Clear Chat"):
-    st.session_state.chat_history = []
-    st.rerun()
+# Image
+col1, col2, col3 = st.columns([1,2,1])
+with col2:
+    st.image("avatar_img.png", caption="Vansh's Personal AI Assistant", use_container_width=True)
+st.markdown("<p style='text-align: center;'>Ask anything about Vansh Dhall</p>", unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
+
+# Clear Chat Button (centered)
+col1, col2, col3 = st.columns([1,2,1])
+with col2:
+    if st.button("🧹 Clear Chat"):
+        st.session_state.chat_history = []
+        st.rerun()
 
 # Empty state
 if not st.session_state.chat_history:
