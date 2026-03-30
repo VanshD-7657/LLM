@@ -1,7 +1,6 @@
 
+# Step 1: Install dependencies
 import os
-from dotenv import load_dotenv
-load_dotenv()
 from langchain_groq import ChatGroq
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -11,6 +10,9 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from dotenv import load_dotenv
+load_dotenv()
+
 
 groq_api = st.secrets["GROQ_API_KEY"]
 llm = ChatGroq(model='meta-llama/llama-4-scout-17b-16e-instruct', groq_api_key=groq_api)
@@ -18,8 +20,7 @@ os.environ["HF_TOKEN"] = st.secrets["HF_TOKEN"]
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 
-
-# Load your text file
+# Step 2: Load and preprocess your document, create vectorstore, and retriever
 @st.cache_resource
 def load_vectorstore():
     loader = TextLoader("PersonalDoc.txt", encoding="utf-8")
@@ -33,9 +34,8 @@ def load_vectorstore():
 vectorstore = load_vectorstore()
 retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
-# ==============================
-# STEP 3: CONTEXTUALIZE QUESTION (History-aware)
-# ==============================
+
+# Step 3: CONTEXTUALIZE QUESTION (History-aware)
 contextualize_q_prompt = ChatPromptTemplate.from_messages([
     ("system",
      "Given chat history and latest user question, "
@@ -46,9 +46,7 @@ contextualize_q_prompt = ChatPromptTemplate.from_messages([
 
 contextualize_chain = contextualize_q_prompt | llm | StrOutputParser()
 
-# ==============================
-# STEP 4: RETRIEVER STEP
-# ==============================
+# Step 4: Custom Retrieval Chain that uses contextualized question and retrieves relevant docs
 def retrieve_with_history(inputs):
     # Convert follow-up question → standalone question
     standalone_question = contextualize_chain.invoke({
@@ -68,9 +66,7 @@ def retrieve_with_history(inputs):
         "chat_history": inputs["chat_history"]
     }
 
-# ==============================
-# STEP 5: QA PROMPT
-# ==============================
+# Step 5: QA Prompt (with strict instructions to avoid hallucination and maintain professionalism)  
 qa_prompt = ChatPromptTemplate.from_messages([
     ("system",
      """You are a professional AI assistant who describes Vansh Dhall to others.
@@ -95,9 +91,7 @@ Context:
     ("human", "{input}")
 ])
 
-# ==============================
-# STEP 6: FINAL RAG CHAIN
-# ==============================
+# Final RAG Chain
 rag_chain = (
     retrieve_with_history
     | qa_prompt
@@ -128,6 +122,7 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
+
 # Show previous messages (ONLY last 2)
 for message in st.session_state.chat_history[-2:]:
     if isinstance(message, HumanMessage):
