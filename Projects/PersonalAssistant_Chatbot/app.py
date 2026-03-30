@@ -23,13 +23,25 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-
 # Step 2: Load and preprocess your document, create vectorstore, and retriever
 @st.cache_resource
 def load_vectorstore():
-    loader = TextLoader("PersonalDoc.txt", encoding="utf-8")
-    docs = loader.load()
+    try:
+        import os
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(BASE_DIR, "PersonalDoc.txt")
 
-    splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-    split_docs = splitter.split_documents(docs)
+        loader = TextLoader(file_path, encoding="utf-8", autodetect_encoding=True)
+        docs = loader.load()
 
-    return Chroma.from_documents(split_docs, embeddings)
+        splitter = RecursiveCharacterTextSplitter(
+            chunk_size=1000,
+            chunk_overlap=200
+        )
+        split_docs = splitter.split_documents(docs)
+
+        return Chroma.from_documents(split_docs, embeddings)
+
+    except Exception as e:
+        st.error(f"Error loading file: {e}")
+        return None
 
 vectorstore = load_vectorstore()
 retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
