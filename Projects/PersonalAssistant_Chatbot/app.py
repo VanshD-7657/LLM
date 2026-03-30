@@ -143,16 +143,11 @@ with col2:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     image_path = os.path.join(BASE_DIR, "avatar_img.png")
     st.image(image_path, caption="Vansh's Personal AI Assistant", use_container_width=True)
-    
+
 st.markdown("<p style='text-align: center;'>Ask anything about Vansh Dhall</p>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
-# Clear Chat Button (centered)
-col1, col2, col3 = st.columns([1,2,1])
-with col2:
-    if st.button("🧹 Clear Chat"):
-        st.session_state.chat_history = []
-        st.rerun()
+
 
 # Empty state
 if not st.session_state.chat_history:
@@ -207,7 +202,11 @@ if user_input:
         HumanMessage(content=user_input),
         AIMessage(content=response)
     ])
-
+col1, col2, col3 = st.columns([1,2,1])
+with col2:
+    if st.button("🧹 Clear Chat"):
+        st.session_state.chat_history = []
+        st.rerun()
 # Footer
 st.markdown("---")
 st.caption("🚀 Built by Vansh Dhall • Personal AI Assistant")
