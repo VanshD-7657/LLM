@@ -202,11 +202,10 @@ if user_input:
         HumanMessage(content=user_input),
         AIMessage(content=response)
     ])
-col1, col2, col3 = st.columns([1,2,1])
-with col2:
-    if st.button("🧹 Clear Chat"):
-        st.session_state.chat_history = []
-        st.rerun()
+
+if st.button("🧹 Clear Chat"):
+    st.session_state.chat_history = []
+    st.rerun()
 # Footer
 st.markdown("---")
 st.caption("🚀 Built by Vansh Dhall • Personal AI Assistant")
