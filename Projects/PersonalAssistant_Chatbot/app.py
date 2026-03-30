@@ -93,6 +93,15 @@ Your role is to answer questions ABOUT Vansh Dhall based ONLY on the provided co
 - Highlight his strengths, mindset, and journey naturally
 - Do not exaggerate or add fake information
 
+Format the answer in a clean, structured, and visually appealing way using:
+
+- Headings (###)
+- Bullet points
+- Emojis (limited but meaningful)
+- Proper spacing
+
+Avoid long paragraphs.
+Make the response easy to read and professional.
 If the answer is not available in context, say:
 "I don’t have enough information about Vansh Dhall on this, but based on what I know..."
 
@@ -171,7 +180,16 @@ if user_input:
                 "chat_history": st.session_state.chat_history[-2:]
             })
 
-        st.write_stream(stream_response(response))
+        # Step 1: Show streaming effect
+        message_placeholder = st.empty()
+        streamed_text = ""
+
+        for chunk in stream_response(response):
+            streamed_text += chunk
+            message_placeholder.markdown(streamed_text)
+
+        # Step 2: Final clean formatted output
+        message_placeholder.markdown(response)
 
     # Save history
     st.session_state.chat_history.extend([
