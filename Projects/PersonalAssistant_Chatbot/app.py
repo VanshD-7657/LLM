@@ -156,7 +156,7 @@ if not st.session_state.chat_history:
 # Streaming function (improved)
 def stream_response(response):
     words = response.split()
-    chunk_size = 3
+    chunk_size = 5
     for i in range(0, len(words), chunk_size):
         yield " ".join(words[i:i+chunk_size]) + " "
         time.sleep(0.05)
@@ -192,10 +192,10 @@ if user_input:
 
         for chunk in stream_response(response):
             streamed_text += chunk
-            message_placeholder.write(streamed_text)
+            message_placeholder.markdown(streamed_text)
 
         # Step 2: Final clean formatted output
-        message_placeholder.write(response)
+        message_placeholder.markdown(response)
 
     # Save history
     st.session_state.chat_history.extend([
