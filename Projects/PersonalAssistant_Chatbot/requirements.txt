@@ -9,6 +9,8 @@ chromadb
 sentence_transformers
 langchain_huggingface
 langchain_chroma
+chromadb==0.4.24
+protobuf==3.20.3
 langchain_core
 langchain_groq
 langserve
