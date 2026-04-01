@@ -1,4 +1,4 @@
-langchain
+langchain==0.1.16
 python-dotenv
 ipykernel
 streamlit
@@ -8,7 +8,6 @@ langchain_text_splitters
 chromadb
 sentence_transformers
 langchain_huggingface
-langchain_chroma
 chromadb==0.4.24
 protobuf==3.20.3
 langchain_core
