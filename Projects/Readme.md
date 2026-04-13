@@ -32,6 +32,13 @@ A **context-aware AI chatbot** that can answer questions about me by retrieving 
 - ⚡ Real-time response streaming
 - 🌐 Deployed using Streamlit Cloud
 
+### Mathematical Chatbot
+A Chatbot which is able in logical reasoning and provide the answer after whole calculation
+
+### RAG PDF Chatbot
+A RAG based Chatbot which can Retrieve the context of PDF and then able to give the response based on the PDF\
+
+
 #### ⚙️ Tech Stack:
 - Python
 - LangChain
