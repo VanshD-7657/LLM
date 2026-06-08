@@ -29,8 +29,8 @@ Consistency over motivation, Continuous learning, Discipline and hard work, Hone
 
 1.Technical Skills
 Languages: Python, SQL
-Technologies: Machine Learning, Deep Learning, Natural Language Processing (NLP), Web Scraping
-Frameworks & Databases: Flask, Apache Spark(PySpark), MySQL
+Technologies: Machine Learning, Deep Learning, Natural Language Processing (NLP), Web Scraping, GenerativeAI
+Frameworks & Databases: LangChain, LangGraph, LangSmith Flask, Apache Spark(PySpark), MySQL, PostgreSql
 Developer Tools: Git, GitHub, Microsoft Excel, Tableau
 
 2.Tools & Technologies:
@@ -72,7 +72,15 @@ ingestion to deployment.
 
 
 🚀 Projects
-1.Network Security Detection System | Python, Scikit-learn, MongoDB, AWS, Flask
+1. Multi-Agent AI Travel Planning System | Python, LangChain, LangGraph, Groq, PostgreSQL, Streamlit
+• Built a multi-agent AI travel planner using LangGraph orchestration and Groq LLMs, enabling personalized
+itinerary generation, flight search, and context-aware travel assistance
+• Integrated Tavily Search API, Flight Search Tool, and PDF Generator as tool-augmented agents, streamlining
+travel research into a unified conversational workflow
+• Implemented PostgreSQL-backed conversation memory and deployed the application on Streamlit Cloud with
+secure secret management and cloud-hosted Neon PostgreSQL integration
+
+2. Network Security Detection System | Python, Scikit-learn, MongoDB, AWS, Flask
 • Engineered an end-to-end Machine Learning pipeline to classify malicious websites, achieving a 95% accuracy rate
 through rigorous model validation and hyperparameter tuning.
 • Orchestrated automated data ingestion and transformation (ETL) workflows, utilizing Scikit-learn for feature
@@ -80,7 +88,7 @@ engineering and model optimization.
 • Deployed the production-ready model as a scalable REST API using Flask on AWS Cloud, integrated with
 MongoDB for efficient NoSQL data storage and real-time inference.
 
-2.Student Performance Analytics System | Python, CatBoost, Flask, Pandas, Scikit-learn
+3.Student Performance Analytics System | Python, CatBoost, Flask, Pandas, Scikit-learn
 • Architected a modular Machine Learning pipeline using CatBoost, achieving high-precision regression performance
 through automated hyperparameter tuning and feature selection.
 • Engineered a production-grade codebase with custom Exception Handling and Logging mechanisms, ensuring
