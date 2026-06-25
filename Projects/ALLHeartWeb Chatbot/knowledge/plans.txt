@@ -1,0 +1,82 @@
+Planning Details and usage
+
+1.Starter Plan- $299 /month
+For individuals getting started with domain data.
+Start 3-Month Trial
+Volume
+6,000,000 Domain Credits / month
+10,000 API Calls / month
+500,000 Daily Download Limit
+1 System Login
+All 9 products included
+WHOIS Lookup
+Reverse Lookup
+Newly Registered Domains
+Updated Domains
+Dropped Domains
+Deleted Domains
+Expired Domains
+Expiring Domains
+Proxy Removed Domains
+Limits & Compliance
+CSV + JSON Export
+4× Daily Updates
+Full Archive Access
+Standard Compliance
+2/sec · 500K/day rate
+10K API page size
+
+2. Pro Plan- $499/month
+For teams that need faster updates and deeper reach.
+Start 3-Month Trial
+Volume
+15,000,000 Domain Credits / month
+100,000 API Calls / month
+2,500,000 Daily Download Limit
+5 System Logins
+All 9 products included
+WHOIS Lookup
+Reverse Lookup
+Newly Registered Domains
+Updated Domains
+Dropped Domains
+Deleted Domains
+Expired Domains
+Expiring Domains
+Proxy Removed Domains
+Limits & Compliance
+CSV + JSON Export
+4× Daily Updates
+Full Archive Access
+Standard Compliance
+Dedicated Manager
+3/sec · 5M/day rate
+100K API page size
+
+
+3.Enterprise Plan- $999/month
+High-volume data with compliance and dedicated support.
+Start 3-Month Trial
+Volume
+40,000,000 Domain Credits / month
+1,000,000 API Calls / month
+25,000,000 Daily Download Limit
+10 System Logins
+All 9 products included
+WHOIS Lookup
+Reverse Lookup
+Newly Registered Domains
+Updated Domains
+Dropped Domains
+Deleted Domains
+Expired Domains
+Expiring Domains
+Proxy Removed Domains
+Limits & Compliance
+CSV + JSON + SQL Export
+4× Daily Updates
+Full Archive Access
+NDA + SLA Compliance
+Dedicated Manager
+5/sec · 25M/day rate
+1M API page size
