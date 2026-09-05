@@ -142,7 +142,7 @@ col1, col2, col3 = st.columns([1,2,1])
 with col2:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     image_path = os.path.join(BASE_DIR, "avatar_img.png")
-    st.image(image_path, caption="Vansh's Personal AI Assistant", use_container_width=True)
+    st.image(image_path, caption="Vansh's Personal AI Assistant", width="stretch")
 
 st.markdown("<p style='text-align: center;'>Ask anything about Vansh Dhall</p>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
