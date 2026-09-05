@@ -16,7 +16,7 @@ load_dotenv()
 
 
 groq_api = st.secrets["GROQ_API_KEY"]
-llm = ChatGroq(model='meta-llama/llama-4-scout-17b-16e-instruct', groq_api_key=groq_api)
+llm = ChatGroq(model='openai/gpt-oss-120b', groq_api_key=groq_api)
 os.environ["HF_TOKEN"] = st.secrets["HF_TOKEN"]
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 

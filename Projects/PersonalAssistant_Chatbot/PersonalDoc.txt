@@ -29,8 +29,8 @@ Consistency over motivation, Continuous learning, Discipline and hard work, Hone
 
 1.Technical Skills
 Languages: Python, SQL
-Technologies: Machine Learning, Deep Learning, Natural Language Processing (NLP), Web Scraping, GenerativeAI
-Frameworks & Databases: LangChain, LangGraph, LangSmith Flask, Apache Spark(PySpark), MySQL, PostgreSql
+Technologies: Machine Learning, Deep Learning, Natural Language Processing (NLP), Computer Vision, Web Scraping, GenerativeAI
+Frameworks & Databases: LangChain, LangGraph, LangSmith, OpenCV Flask, Apache Spark(PySpark), MySQL, PostgreSql
 Developer Tools: Git, GitHub, Microsoft Excel, Tableau
 
 2.Tools & Technologies:
@@ -47,10 +47,36 @@ Public Speaking
 Leadership
 Teamwork
 Problem-Solving
+Vloging 
+Content Creation
 
 💼 Experience
 
-1.Process Associate May 2024 – May 2025
+1.AI Trainer and Developer July 2026 – Present
+Terramind EdTech Pvt. Ltd.
+• Designing and developing reliable AI systems and intelligent agents capable of interpreting natural-language instructions,
+reasoning over tasks, and executing multi-step workflows.
+• Contributing to the end-to-end development of a Humanoid AI Robot, integrating AI agents, Computer Vision, sensors,
+hardware interfaces, and task execution into a unified intelligent robotic system.
+• Developing Computer Vision capabilities using Python and OpenCV for visual perception, object detection, image
+understanding, and real-time awareness of the robot's physical environment.
+• Working across AI software and robotic hardware to connect perception, decision-making, and physical actions,
+enabling AI-driven systems to interact with and respond to real-world environments.
+• Building AI-agent workflows that decompose complex user instructions into actionable tasks, coordinate multiple
+capabilities, and incorporate error handling and feedback to improve task reliability and execution.
+
+2.YouTube Content Creator
+Dhall_saab_pb15
+• Creating and publishing lifestyle and professional vlogs documenting my day-to-day journey, including workplace 
+experiences, professional growth, learning new skills, and personal activities.
+• Managing the complete content creation process, including content planning, filming, video editing, publishing
+and audience engagement to build an authentic digital presence.
+• Showcasing real-world professional experiences, workplace activities, learning journeys, and personal moments
+through consistent and engaging video content.
+• Building and engaging with an online community by sharing authentic experiences and documenting the ongoing
+journey of professional and personal growth.
+
+3.Process Associate May 2024 – May 2025
 Indivirtus Solutions Pvt. Ltd Mohali, Punjab
 • Engineered high-accuracy data validation workflows for international insurance portfolios, achieving a consistent 99%+
 accuracy rate and ensuring strict adherence to global compliance protocols.
@@ -61,7 +87,7 @@ discrepancies and delivering critical status updates to global clients.
 • Collaborated with cross-functional QA and operations teams to streamline documentation lifecycles, driving a
 measurable reduction in Turnaround Time (TAT) and enhancing operational reliability.
 
-2.Data Science Intern Sep 2025 – Mar 2026
+4.Data Science Intern Sep 2025 – Mar 2026
 Unified Mentor Remote
 • Architected and evaluated high-performance Machine Learning and Deep Learning models utilizing Python,
 Scikit-learn, and TensorFlow.
@@ -123,6 +149,10 @@ Parivartan 2K25 – Informal Anchor
 4. Winning by Tim S. Grover ( Started 6-Mar-26 to 17-Mar-26)
 5.  Meditating on the Name of Lord By Bhagat Puran Singh Ji (Started 18-Mar-26 to 26-Mar-26) 
 6. The Power of Positive Thinking by Norman Vincent Peale (Started Mar-26 to Present)
+7. Do Epic Shit - Ankur warookee (July-17)
+8. The 48 Laws of Power - Robert Greene (July-20)
+9. Get Epic Shit (Aug-24)
+10. Atomic Habits (Aug-17)
 
 
 🌱 Goals
@@ -150,6 +180,7 @@ Smart problem solver
 
 🌐 Social sites Links 
 
+YouTube Channel Link-(https://www.youtube.com/@DhallsaabPb15)
 LinkedIn: (https://www.linkedin.com/in/vansh-dhall-703111363)
 GitHub: (https://github.com/VanshD-7657)
 Portfolio: (https://vansh-dhall-portfolio.lovable.app)
