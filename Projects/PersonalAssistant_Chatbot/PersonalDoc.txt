@@ -55,7 +55,7 @@ Content Creation
 1.AI Trainer and Developer July 2026 – Present
 Terramind EdTech Pvt. Ltd.
 • Designing and developing reliable AI systems and intelligent agents capable of interpreting natural-language instructions,
-reasoning over tasks, and executing multi-step workflows.
+reasoning over tasks and executing multi-step workflows.
 • Contributing to the end-to-end development of a Humanoid AI Robot, integrating AI agents, Computer Vision, sensors,
 hardware interfaces, and task execution into a unified intelligent robotic system.
 • Developing Computer Vision capabilities using Python and OpenCV for visual perception, object detection, image
